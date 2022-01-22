@@ -19,9 +19,11 @@ import {
   FiHome,
 } from "react-icons/fi";
 
+import { FaUsers} from "react-icons/fa"
+
 const initialState = [
   {
-    title: "Life Style - System",
+    title: "Vine School System",
     items: [
       {
         url: "/",
@@ -38,22 +40,28 @@ const initialState = [
             url: "/",
             title: "General",
             items: [],
-          },
+          }
+        ],
+      },
+      {
+        url: "/",
+        icon: <FaUsers size={20} />,
+        title: "Candidates",
+        badge: {
+          color: "bg-indigo-500 text-white",
+          text: 6,
+        },
+        items: [
           {
-            url: "/",
-            title: "History",
+            url: "/candidates/new",
+            title: "Create",
             items: [],
           },
           {
-            url: "/",
-            title: "Pedding",
+            url: "/candidates",
+            title: "List",
             items: [],
-          },
-          {
-            url: "/",
-            title: "Statement",
-            items: [],
-          },
+          }
         ],
       },
       {
@@ -66,13 +74,13 @@ const initialState = [
         },
         items: [
           {
-            url: "/patients",
-            title: "Patient",
+            url: "/candidates",
+            title: "Candidates",
             items: [],
           },
           {
-            url: "/doctors",
-            title: "Doctors's",
+            url: "/teachers",
+            title: "Teachers",
             items: [],
           }
         ],

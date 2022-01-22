@@ -1,14 +1,27 @@
-import Repository, { baseAthletesURL, serializeQuery } from "./repository";
+import Repository, { baseUrl, serializeQuery } from "./repository";
 
+const serializeCandidates = (candidates)=>{
+  let items = candidates
+
+  items = items.map((item) => {
+    return {
+      id: item.id,
+      ...item.attributes
+    };
+  });
+
+  return items;
+}
 const get_All = async (filter) => {
   try {
     let res = [];
 
-    await Repository.get(`${baseAthletesURL}/athletes`).then(
-      (response) => (res = response.data)
+    await Repository.get(`${baseUrl}/candidates`).then(
+      (response) => (res = response.data?.data)
     );
+    
+    res = serializeCandidates(res);
 
-    console.log(res);
     return res;
   } catch (e) {
     console.error(e);
@@ -17,7 +30,7 @@ const get_All = async (filter) => {
 
 const get_Id = async (id) => {
   try {
-    const url = `${baseAthletesURL}/athletes/${id}`;
+    const url = `${baseUrl}/candidates/${id}`;
 
     let res = {};
 

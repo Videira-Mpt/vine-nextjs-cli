@@ -20,7 +20,7 @@ export function AuthProvider({ children }) {
   const isAuthenticated = !!user;
 
   useEffect(() => {
-    const { "mls.token": token } = parseCookies();
+    const { "vine.token": token } = parseCookies();
 
     if (token) {
        recoverUserInformation().then(response=> {
@@ -35,7 +35,7 @@ export function AuthProvider({ children }) {
     console.debug(user);
 
     if (!!user?.accessToken) {
-      setCookie(undefined, "mls.token", user.accessToken, {
+      setCookie(undefined, "vine.token", user.accessToken, {
         maxAge: 60 * 60 * 14, // 1 hour
       });
 
@@ -61,7 +61,7 @@ export function AuthProvider({ children }) {
     console.debug(user);
 
     if (!!user?.accessToken) {
-      setCookie(undefined, "mls.token", user.accessToken, {
+      setCookie(undefined, "vine.token", user.accessToken, {
         maxAge: 60 * 60 * 14, // 1 hour
       });
 
@@ -76,7 +76,7 @@ export function AuthProvider({ children }) {
       Router.push("/");
     } else {
       alert("Usuário ou senha inválidos");
-    } 
+    }
   }
 
   async function resetPassword({ email }) {

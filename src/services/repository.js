@@ -5,12 +5,10 @@ const { publicRuntimeConfig } = getConfig();
 
 const baseDomain = publicRuntimeConfig.SERVER_URI; // API for products
 export const basePostUrl = publicRuntimeConfig.SERVER_URI; // API for post
-export const baseStoreURL = publicRuntimeConfig.SERVER_URI; // API for vendor(store)
-export const baseAthletesURL = publicRuntimeConfig.ATHLETES_URL; // API for vendor(store)
 
 export const customHeaders = {
   Accept: "application/json",
-  Authorization: `Bearer ${publicRuntimeConfig.ATHLETES_API}`,
+  Authorization: `Bearer ${publicRuntimeConfig.APIKEY}`,
 };
 
 export const baseUrl = `${baseDomain}`;

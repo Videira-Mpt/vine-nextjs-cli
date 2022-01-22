@@ -21,6 +21,7 @@ module.exports = withTM({
   publicRuntimeConfig: {
     // Will be available on both server and client
     SERVER_URI: process.env.SERVER_URI,
+    APIKEY: process.env.APIKEY,
     FIREBASE_APIKEY: process.env.FIREBASE_APIKEY,
     FIREBASE_AUTHDOMAIN: process.env.FIREBASE_AUTHDOMAIN,
     FIREBASE_PROJECTID: process.env.FIREBASE_PROJECTID,
@@ -33,5 +34,6 @@ module.exports = withTM({
     STRAVA_CLIENT_Id:process.env.STRAVA_CLIENT_Id,
     STRAVA_CLIENT_SECRET: process.env.STRAVA_CLIENT_SECRET,
     STRAVA_CLIENT_REFRESH_TOKEN: process.env.STRAVA_CLIENT_REFRESH_TOKEN
+
   },
 });
